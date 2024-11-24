@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { Row, Col, Card, Button, Table, Modal, Form, Input, DatePicker, notification, Upload, Image, Select } from "antd";
-import { getAllTeachers, AddStudent, UpdateStudent, AddTeacher, UpdateTeacher } from "../api";
+import { getAllTeachers, AddTeacher, UpdateTeacher } from "../api";
 import { useEffect, useState } from "react";
 import logo from "../assets/images/favicon.png"
 import { ToTopOutlined } from "@ant-design/icons";

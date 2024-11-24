@@ -6,10 +6,10 @@ import { Row, Col, notification, Button, Image, Alert } from "antd";
 import { isMobile } from "react-device-detect"; 
 import axios from "axios";
 import moment from "moment";
+import { faceAPI } from "../constant";
 
 export default function TRCam(props){
     const { user, student, what, teacher, class_schedule, class_schedule_time} = props
-    const uri = true ? "https://sjit-api-wk869.ondigitalocean.app/attendance-check" : "http://localhost:5000/attendance-check"
 
     const videoConstraints = {
         width: isMobile? "auto" : 500,
@@ -59,7 +59,7 @@ export default function TRCam(props){
           var formData = new FormData();
           formData.append("File", file);
           formData.append("val", JSON.stringify(val))
-          await axios.post(uri, formData, {
+          await axios.post(faceAPI, formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }

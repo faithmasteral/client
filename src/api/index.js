@@ -1,8 +1,6 @@
 /* eslint-disable */
 import axios from "axios"
-
-const baseURL = false ? "https://sjit-attendance-server-4ymtc.ondigitalocean.app" 
- : "http://localhost:5000"
+import { baseURL } from "../constant"
 
 const JWT = localStorage.getItem("JWT")
 
@@ -14,7 +12,7 @@ const api_url = axios.create({
 })
 
 export async function loginAPI(col, username, password) {
-    return api_url.post("/login", {
+    return api_url.post("/auth/login", {
         col: col,
         username: username,
         password: password
@@ -34,7 +32,7 @@ export async function getTeacherSchedules(_id) {
         query: { teacher: _id }, select: "", join: ""
     })
 }
-//admin=
+
 export async function getAllSchedules() {
     return api_url.post("/get", {
         col: "class_schedule",
